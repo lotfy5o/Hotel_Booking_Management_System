@@ -23,6 +23,10 @@ Route::name('front.')->group(function () {
     Route::view('/registerAuth', 'front.register')->name('registerAuth');
 });
 
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::view('/', 'admin.index')->name('index');
+    Route::view('/login', 'admin.auth.login')->name('login');
+});
 
 
 require __DIR__ . '/auth.php';
