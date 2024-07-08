@@ -14,18 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::name('front.')->group(function () {
+    Route::view('/', 'front.index')->name('index');
+    Route::view('/about', 'front.about')->name('about');
+    Route::view('/contact', 'front.contact')->name('contact');
+    Route::view('/service', 'front.service')->name('service');
+    Route::view('/rooms', 'front.rooms')->name('rooms');
+    Route::view('/registerAuth', 'front.register')->name('registerAuth');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
