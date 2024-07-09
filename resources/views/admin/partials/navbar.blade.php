@@ -7,6 +7,7 @@
             placeholder="Type something..." aria-label="Search">
     </form>
     <ul class="nav">
+        @include('admin.partials.language')
         <li class="nav-item">
             <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
                 <i class="fe fe-sun fe-16"></i>
