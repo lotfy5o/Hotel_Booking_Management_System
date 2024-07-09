@@ -21,7 +21,7 @@
                 <li class="nav-item @yield('contact-active')"><a href="{{ route('front.contact') }}"
                         class="nav-link">Contact</a>
                 </li>
-                @if(!Auth::check())
+                {{-- @if(!Auth::check())
                 <li class="nav-item @yield('login-active')"><a href="{{ route('register') }}" class="nav-link">Register
                         / Login</a>
 
@@ -41,7 +41,7 @@
                     </ul>
                 </li>
 
-                @endif
+                @endif --}}
 
 
 

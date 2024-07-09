@@ -20,13 +20,13 @@ Route::name('front.')->group(function () {
     Route::view('/contact', 'front.contact')->name('contact');
     Route::view('/service', 'front.service')->name('service');
     Route::view('/rooms', 'front.rooms')->name('rooms');
-    Route::view('/registerAuth', 'front.register')->name('registerAuth');
 });
 
 Route::name('admin.')->prefix('admin')->group(function () {
-    Route::view('/', 'admin.index')->name('index');
-    Route::view('/login', 'admin.auth.login')->name('login');
+
+    Route::middleware('auth')->group(function () {
+        Route::view('/', 'admin.index')->name('index');
+    });
+
+    require __DIR__ . '/auth.php';
 });
-
-
-require __DIR__ . '/auth.php';
