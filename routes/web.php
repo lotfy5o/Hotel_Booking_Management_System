@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HotelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -32,6 +33,9 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
 
     Route::middleware('auth')->group(function () {
         Route::view('/', 'admin.index')->name('index');
+
+        /// Hotels///
+        Route::resource('hotels', HotelController::class);
     });
 
     require __DIR__ . '/auth.php';

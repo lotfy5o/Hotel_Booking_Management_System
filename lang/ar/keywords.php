@@ -7,6 +7,9 @@ return [
     'dashboard' => 'لوحة التحكم',
     'welcome' => '! مرحباَ',
 
+    // common
+    'no_records_found' => 'لا يوجد بيانات',
+    'add_new' => 'ضف فندقا جديدا',
 
     // login page
     'sign_in' => 'تسجيل الدخول',
@@ -14,5 +17,19 @@ return [
     'password' => 'كلمة المرور',
     'remember' => 'تذكرني',
     'login' => 'تسجيل الدخول',
+
+    // home page
+    'home' => 'الصفحة الرئيسية',
+
+    'hotels' => 'الفنادق',
+
+    // create page
+    'submit' => 'إرسال',
+    'name' => 'الاسم',
+    'location' => 'الموقع',
+    'image' => 'الصورة',
+    'description' => 'الوصف',
+
+
 
 ];

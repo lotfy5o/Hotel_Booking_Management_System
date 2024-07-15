@@ -247,3 +247,12 @@
       gtag('{{asset('assets-admin')}}/js', new Date());
       gtag('config', 'UA-56159088-1');
 </script>
+
+{{-- delete Hotels --}}
+<script>
+    function confirmDelete(id){
+        if(confirm('Are you sure you want to delete this?' )){
+            document.getElementById('deleteForm-' + id).submit();
+        }
+    }
+</script>
