@@ -8,48 +8,40 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group mb-3">
-                <label for="name">{{__('keywords.name')}}</label>
+                <x-form-label title="name"></x-form-label>
                 <input type="text" name="name" class="form-control" placeholder="{{__('keywords.name')}}"
                     value="{{ $hotel->name }}">
 
-                @error('name')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                <x-validation-error field="name"></x-validation-error>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="form-group mb-3">
-                <label for="location">{{__('keywords.location')}}</label>
+                <x-form-label title="location"></x-form-label>
                 <input type="text" name="location" class="form-control" placeholder="{{__('keywords.location')}}"
                     value="{{ $hotel->location }}">
 
-                @error('location')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                <x-validation-error field="location"></x-validation-error>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="form-group mb-3">
-                <label for="image">{{__('keywords.image')}}</label>
+                <x-form-label title="image"></x-form-label>
                 <input type="file" name="image" class="form-control-file" value="{{ $hotel->image }}">
 
-                @error('image')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                <x-validation-error field="image"></x-validation-error>
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="form-group mb-3">
-                <label for="description">{{__('keywords.description')}}</label>
+                <x-form-label title="description"></x-form-label>
                 <textarea type="text" name="description" class="form-control"
                     placeholder="{{__('keywords.description')}}">{{ $hotel->description }}</textarea>
 
-                @error('description')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                <x-validation-error field="description"></x-validation-error>
             </div>
         </div>
 

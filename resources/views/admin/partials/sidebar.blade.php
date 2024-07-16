@@ -27,17 +27,13 @@
             </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Components</span>
+            <span>{{ __('keywords.components') }}</span>
         </p>
 
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item">
-                <a href="{{ route('admin.hotels.index') }}" class=" nav-link">
-                    <i class="fe fe-home fe-16"></i>
-                    <span class="ml-3 item-text">{{__('keywords.hotels')}}</span>
-                </a>
-
-            </li>
+            <x-sidebar-tab href="{{ route('admin.hotels.index') }}" icon="fe-home"
+                localization="{{ __('keywords.hotels') }}">
+            </x-sidebar-tab>
         </ul>
 
         </div>

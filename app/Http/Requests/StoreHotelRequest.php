@@ -25,7 +25,7 @@ class StoreHotelRequest extends FormRequest
             'name' => 'required|string',
             'location' => 'required|string',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:png,jpg, jpeg'
+            'image' => 'required|image|mimes:png,jpg, jpeg'
 
         ];
     }

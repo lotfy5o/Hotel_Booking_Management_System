@@ -10,22 +10,20 @@
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <h5 class="h5-page-title">{{__('keywords.hotels')}}</h5>
                 <div class="page-title">
-                    <a href="{{ route('admin.hotels.create') }}"
-                        class="btn mb-2 btn-primary">{{__('keywords.add_new')}}</a>
+                    <x-action-button href="{{ route('admin.hotels.create') }}" type="create"></x-action-button>
                 </div>
             </div>
 
-            @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
+            <x-success-alert></x-success-alert>
+
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Location</th>
-                        <th>Actions</th>
+                        <th>{{ __('keywords.id') }}</th>
+                        <th>{{ __('keywords.name') }}</th>
+                        <th>{{ __('keywords.image') }}</th>
+                        <th>{{ __('keywords.location') }}</th>
+                        <th>{{ __('keywords.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,28 +37,21 @@
                         <td>{{ $hotel->location }}</td>
                         <td>
                             <a href="{{ route('admin.hotels.show', ['hotel' => $hotel]) }}"
-                                class="btn mb-2 btn-success">Show</a>
+                                class="btn mb-2 btn-success">{{ __('keywords.show_button') }}</a>
                             <a href="{{ route('admin.hotels.edit', ['hotel' => $hotel]) }}"
-                                class="btn mb-2 btn-warning">Edit</a>
-                            <form action="{{ route('admin.hotels.destroy', ['hotel' => $hotel]) }}" method="post"
-                                id="deleteForm-{{ $hotel->id }}" class="d-inline">
-                                @csrf
-                                @method('DELETE')
+                                class="btn mb-2 btn-warning">{{ __('keywords.edit_button') }}</a>
 
-                                <button type="button" class="btn mb-2  btn-danger"
-                                    onclick="confirmDelete({{ $hotel->id }})">
-                                    Delete
-                                </button>
-                            </form>
+                            <x-delete-button href="{{ route('admin.hotels.show', ['hotel' => $hotel]) }}"
+                                id="{{ $hotel->id }}"></x-delete-button>
                         </td>
                     </tr>
+
                     @empty
-                    <tr>
-                        <td colspan="100%">
-                            <div class="alert alert-danger">{{ __('keywords.no_records_found') }}</div>
-                        </td>
-                    </tr>
+
+                    <x-empty-alert></x-empty-alert>
+
                     @endforelse
+
                 </tbody>
 
             </table>

@@ -15,7 +15,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels = Hotel::paginate('10');
+        $hotels = Hotel::paginate(config('pagination.count'));
         return view('admin.hotels.index', get_defined_vars());
     }
 
