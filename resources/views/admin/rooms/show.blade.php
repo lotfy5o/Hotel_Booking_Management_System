@@ -71,7 +71,7 @@
         <div class="form-group mb-3">
             <x-form-label title="image"></x-form-label>
             <div>
-                <img src="{{ asset('storage') }}/rooms/{{ $room->image }}" alt="" width="300px">
+                <img src="{{ asset('storage') }}/rooms/{{ $room->image }}" alt="..." width="300px">
             </div>
 
             <x-validation-error field="image"></x-validation-error>

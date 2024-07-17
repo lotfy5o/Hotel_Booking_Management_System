@@ -66,6 +66,7 @@ return [
     'room_created_successfully' => 'Your Room Was Created Successfully',
     'room_updated_successfully' => 'Your Room Was Updated Successfully',
     'room_deleted_successfully' => 'Your Room Was Deleted Successfully',
+    'not_found' => "Not Found"
 
 
 

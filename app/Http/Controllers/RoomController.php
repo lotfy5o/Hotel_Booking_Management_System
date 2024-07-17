@@ -112,6 +112,8 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
+        Storage::delete("public/rooms/$room->image");
+
         $room->delete();
         return to_route('admin.rooms.index')->with('success', __('keywords.room_deleted_successfully'));
     }

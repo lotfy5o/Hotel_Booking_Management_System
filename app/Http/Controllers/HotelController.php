@@ -100,6 +100,8 @@ class HotelController extends Controller
      */
     public function destroy(Hotel $hotel)
     {
+        Storage::delete("public/hotels/$hotel->image");
+
         $hotel->delete();
         return to_route('admin.hotels.index')->with('success', __('keywords.hotel_deleted_successfully'));
     }

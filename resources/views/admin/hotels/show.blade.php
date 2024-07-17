@@ -31,7 +31,7 @@
         <div class="form-group mb-3">
             <label for="image">{{__('keywords.image')}}</label>
             <div>
-                <img src="{{ asset('storage') }}/hotels/{{ $hotel->image }}" alt="not found" width="50px">
+                <img src="{{ asset('storage') }}/hotels/{{ $hotel->image }}" alt="..." width="50px">
             </div>
 
             @error('image')
