@@ -51,5 +51,22 @@ return [
     'edit_hotel' => 'Edit Hotel',
     'show_hotel' => 'Show Hotel',
 
+    // room page
+    'rooms' => 'Rooms',
+    'price' => 'Price',
+    'num_persons' => 'Number of Persons',
+    'num_beds' => 'Number of Beds',
+    'size' => 'Size',
+    'view' => 'View',
+    'hotel_id' => 'Hotel',
+    'add_room' => 'Add Room',
+    'edit_room' => 'Edit Room',
+    'show_room' => 'Room Info.',
+
+    'room_created_successfully' => 'Your Room Was Created Successfully',
+    'room_updated_successfully' => 'Your Room Was Updated Successfully',
+    'room_deleted_successfully' => 'Your Room Was Deleted Successfully',
+
+
 
 ];

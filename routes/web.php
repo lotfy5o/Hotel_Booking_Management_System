@@ -3,6 +3,7 @@
 use App\Http\Controllers\HotelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoomController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -36,6 +37,9 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
 
         /// Hotels///
         Route::resource('hotels', HotelController::class);
+
+        /// Rooms ///
+        Route::resource('rooms', RoomController::class);
     });
 
     require __DIR__ . '/auth.php';

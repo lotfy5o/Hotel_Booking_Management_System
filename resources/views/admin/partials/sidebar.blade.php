@@ -34,6 +34,9 @@
             <x-sidebar-tab href="{{ route('admin.hotels.index') }}" icon="fe-home"
                 localization="{{ __('keywords.hotels') }}">
             </x-sidebar-tab>
+            <x-sidebar-tab href="{{ route('admin.rooms.index') }}" icon="fe-sunset"
+                localization="{{ __('keywords.rooms') }}">
+            </x-sidebar-tab>
         </ul>
 
         </div>

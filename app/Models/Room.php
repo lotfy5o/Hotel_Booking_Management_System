@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hotel extends Model
+class Room extends Model
 {
     use HasFactory;
-    protected $table = 'hotels';
+    protected $table = 'rooms';
 
 
     protected $guarded = ['id'];
 
-    function rooms()
+    function hotel()
     {
-        return $this->hasMany(Room::class);
+        return $this->belongsTo(Hotel::class);
     }
+
 
     //Upload Path
 
