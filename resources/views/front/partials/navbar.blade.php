@@ -21,27 +21,32 @@
                 <li class="nav-item @yield('contact-active')"><a href="{{ route('front.contact') }}"
                         class="nav-link">Contact</a>
                 </li>
-                {{-- @if(!Auth::check())
-                <li class="nav-item @yield('login-active')"><a href="{{ route('register') }}" class="nav-link">Register
-                        / Login</a>
+                @if(!Auth::guard('web')->check())
+                <li class="nav-item @yield('register-active')"><a href="{{ route('register') }}"
+                        class="nav-link">Register</a></li>
+                <li class="nav-item @yield('login-active')"><a href="{{ route('login') }}" class="nav-link">Login</a>
+                </li>
 
 
 
-                    @else
+                @else
                 <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        aria-haspopup="true" aria-expanded="false">{{ Auth::guard('web')->user()->name }}</a>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
-                                <button type="submit" class="btn btn-link nav-link text-primary h-auto">Logout</button>
+                                <a href="javascript:{}" class="dropdown-item"
+                                    onclick="this.closest('form').submit();return false;">
+                                    <span class="align-middle">Log Out</span>
+                                </a>
                             </form>
                         </li>
                     </ul>
                 </li>
 
-                @endif --}}
+                @endif
 
 
 
