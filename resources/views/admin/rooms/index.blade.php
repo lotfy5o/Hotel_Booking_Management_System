@@ -23,7 +23,7 @@
                         <th>{{ __('keywords.name') }}</th>
                         {{-- <th>{{ __('keywords.image') }}</th> --}}
                         <th>{{ __('keywords.view') }}</th>
-                        <th>{{ __('keywords.price') }}</th>
+                        <th>{{ __('keywords.price') }} / per night</th>
                         <th>{{ __('keywords.num_beds') }}</th>
                         <th>{{ __('keywords.size') }}</th>
                         <th>{{ __('keywords.hotel_id') }}</th>

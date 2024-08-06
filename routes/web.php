@@ -36,6 +36,8 @@ Route::name('front.')->controller(FrontController::class)->group(function () {
 
     //=========================ROOMS PAGE
     Route::get('/rooms', 'rooms')->name('rooms');
+
+    Route::get('/rooms/{room}', 'roomDetails')->name('roomDetail');
 });
 require __DIR__ . '/auth.php';
 
@@ -48,7 +50,7 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
 
 ])->group(function () {
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware('admin')->group(function () {
         Route::view('/', 'admin.index')->name('index');
 
         /// Hotels///
@@ -58,5 +60,5 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
         Route::resource('rooms', RoomController::class);
     });
 
-    require __DIR__ . '/auth.php';
+    require __DIR__ . '/adminAuth.php';
 });
