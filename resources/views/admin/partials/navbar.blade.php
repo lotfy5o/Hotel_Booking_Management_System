@@ -36,7 +36,7 @@
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                {{-- <a class="dropdown-item" href="#">Profile</a> --}}
+                <a class="dropdown-item" href="#">{{ Auth::guard('admin')->user()->name }}</a>
 
                 <form action="{{ route('admin.logout') }}" method="post">
                     @csrf
