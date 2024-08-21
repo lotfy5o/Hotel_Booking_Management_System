@@ -18,6 +18,12 @@ class Hotel extends Model
         return $this->hasMany(Room::class);
     }
 
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+
     //Upload Path
 
     const UPLOADPATH = 'images/';

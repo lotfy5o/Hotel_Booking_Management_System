@@ -13,6 +13,8 @@ return [
 
 
 
+
+
     // common
     'no_records_found' => 'No Records are Found',
     'components' => 'Components',
@@ -57,6 +59,7 @@ return [
     'num_persons' => 'Number of Persons',
     'num_beds' => 'Number of Beds',
     'size' => 'Size',
+    'status' => 'Status',
     'view' => 'View',
     'hotel_id' => 'Hotel',
     'add_room' => 'Add Room',
@@ -66,8 +69,34 @@ return [
     'room_created_successfully' => 'Your Room Was Created Successfully',
     'room_updated_successfully' => 'Your Room Was Updated Successfully',
     'room_deleted_successfully' => 'Your Room Was Deleted Successfully',
-    'not_found' => "Not Found"
+    'not_found' => "Not Found",
 
+
+    //room-details
+    'check_in' => 'Check In',
+    'check_out' => 'Check Out',
+    'phone' => 'Phone',
+    'full_name' => 'Full Name',
+    'room_name' => 'Room Name',
+    'hotel_name' => 'Hotel Name',
+    'days' => 'Days',
+
+    //booking tab
+    'bookings' => 'Bookings',
+    'payment' => 'Payment',
+    'change_status' => 'Change Status',
+
+    'booking_deleted_successfully' => 'Booking Deleted Successfully',
+    'booking_updated_successfully' => 'Booking Updated Successfully',
+
+    'edit_booking' => 'Edit Booking',
+    'change_status' => 'Change Status',
+
+    // admin tab
+    'admins' => 'Admins',
+    'admin_created_successfully' => 'Your Admin Was Created Successfully',
+    'admin_updated_successfully' => 'Your Admin Was Updated Successfully',
+    'admin_deleted_successfully' => 'Your Admin Was Deleted Successfully',
 
 
 ];

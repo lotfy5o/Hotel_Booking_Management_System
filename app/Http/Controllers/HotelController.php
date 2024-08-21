@@ -16,7 +16,7 @@ class HotelController extends Controller
     public function index()
     {
         $hotels = Hotel::paginate(config('pagination.count'));
-        return view('admin.hotels.index', get_defined_vars());
+        return view('back.hotels.index', get_defined_vars());
     }
 
     /**
@@ -24,7 +24,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        return view('admin.hotels.create');
+        return view('back.hotels.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class HotelController extends Controller
 
         Hotel::create($data);
 
-        return to_route('admin.hotels.index')->with('success', __('keywords.hotel_created_successfully'));
+        return to_route('back.hotels.index')->with('success', __('keywords.hotel_created_successfully'));
     }
 
     /**
@@ -56,7 +56,7 @@ class HotelController extends Controller
      */
     public function show(Hotel $hotel)
     {
-        return view('admin.hotels.show', get_defined_vars());
+        return view('back.hotels.show', get_defined_vars());
     }
 
     /**
@@ -64,7 +64,7 @@ class HotelController extends Controller
      */
     public function edit(Hotel $hotel)
     {
-        return view('admin.hotels.edit', get_defined_vars());
+        return view('back.hotels.edit', get_defined_vars());
     }
 
     /**
@@ -92,7 +92,7 @@ class HotelController extends Controller
         }
 
         $hotel->update($data);
-        return to_route('admin.hotels.index')->with('success', __('keywords.hotel_updated_successfully'));
+        return to_route('back.hotels.index')->with('success', __('keywords.hotel_updated_successfully'));
     }
 
     /**
@@ -103,6 +103,6 @@ class HotelController extends Controller
         Storage::delete("public/hotels/$hotel->image");
 
         $hotel->delete();
-        return to_route('admin.hotels.index')->with('success', __('keywords.hotel_deleted_successfully'));
+        return to_route('back.hotels.index')->with('success', __('keywords.hotel_deleted_successfully'));
     }
 }

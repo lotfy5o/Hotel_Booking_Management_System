@@ -37,9 +37,14 @@
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
+
+                                <a href="{{ route('front.bookings') }}" class="dropdown-item" <span
+                                    class="align-middle">My Bookings</span>
+                                </a>
+
                                 <a href="javascript:{}" class="dropdown-item"
                                     onclick="this.closest('form').submit();return false;">
-                                    <span class="align-middle">Log Out</span>
+                                    Log Out
                                 </a>
                             </form>
                         </li>

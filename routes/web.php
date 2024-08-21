@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BackHomeController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -37,13 +41,23 @@ Route::name('front.')->controller(FrontController::class)->group(function () {
     //=========================ROOMS PAGE
     Route::get('/rooms', 'rooms')->name('rooms');
 
-    Route::get('/rooms/{room}', 'roomDetails')->name('roomDetail');
+    Route::get('/rooms/{room}', 'roomDetails')->name('roomDetail')->middleware('auth');
+    Route::post('/rooms/{room}/book', 'roomBooking')->name('roomBooking')->middleware('auth');
+    Route::get('/{hotel}/rooms', 'hotelRooms')->name('hotelRooms');
+
+    Route::get('/bookings', 'bookings')->name('bookings')->middleware('auth');
 });
 require __DIR__ . '/auth.php';
 
+Route::middleware('check.price')->group(function () {
+    Route::get('/payment/', [PaymentController::class, 'show'])->name('payment.show');
+    Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+    Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+});
 
 
-Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->middleware([
+
+Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middleware([
     'localeSessionRedirect',
     'localizationRedirect',
     'localeViewPath'
@@ -51,13 +65,20 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
 ])->group(function () {
 
     Route::middleware('admin')->group(function () {
-        Route::view('/', 'admin.index')->name('index');
+
+        Route::get('/', BackHomeController::class)->name('index');
+
+        /// Admins///
+        Route::resource('admins', AdminController::class);
 
         /// Hotels///
         Route::resource('hotels', HotelController::class);
 
         /// Rooms ///
         Route::resource('rooms', RoomController::class);
+
+        /// Bookings ///
+        Route::resource('bookings', BookingController::class);
     });
 
     require __DIR__ . '/adminAuth.php';

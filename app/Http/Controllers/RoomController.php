@@ -17,7 +17,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::paginate(config('pagination.count'));
-        return view('admin.rooms.index', get_defined_vars());
+        return view('back.rooms.index', get_defined_vars());
     }
 
     /**
@@ -26,7 +26,7 @@ class RoomController extends Controller
     public function create()
     {
         $hotels = Hotel::get();
-        return view('admin.rooms.create', get_defined_vars());
+        return view('back.rooms.create', get_defined_vars());
     }
 
     /**
@@ -54,7 +54,7 @@ class RoomController extends Controller
 
         Room::create($data);
 
-        return to_route('admin.rooms.index')->with('success', __('keywords.room_created_successfully'));
+        return to_route('back.rooms.index')->with('success', __('keywords.room_created_successfully'));
     }
 
     /**
@@ -62,7 +62,7 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        return view('admin.rooms.show', get_defined_vars());
+        return view('back.rooms.show', get_defined_vars());
     }
 
     /**
@@ -72,7 +72,7 @@ class RoomController extends Controller
     {
         $hotels = Hotel::get();
 
-        return view('admin.rooms.edit', get_defined_vars());
+        return view('back.rooms.edit', get_defined_vars());
     }
 
     /**
@@ -104,7 +104,7 @@ class RoomController extends Controller
 
 
         $room->update($data);
-        return to_route('admin.rooms.index')->with('success', __('keywords.room_updated_successfully'));
+        return to_route('back.rooms.index')->with('success', __('keywords.room_updated_successfully'));
     }
 
     /**
@@ -115,6 +115,6 @@ class RoomController extends Controller
         Storage::delete("public/rooms/$room->image");
 
         $room->delete();
-        return to_route('admin.rooms.index')->with('success', __('keywords.room_deleted_successfully'));
+        return to_route('back.rooms.index')->with('success', __('keywords.room_deleted_successfully'));
     }
 }
