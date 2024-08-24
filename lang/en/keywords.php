@@ -97,6 +97,7 @@ return [
     'admin_created_successfully' => 'Your Admin Was Created Successfully',
     'admin_updated_successfully' => 'Your Admin Was Updated Successfully',
     'admin_deleted_successfully' => 'Your Admin Was Deleted Successfully',
+    'edit_admin' => 'Edit Admin',
 
 
 ];

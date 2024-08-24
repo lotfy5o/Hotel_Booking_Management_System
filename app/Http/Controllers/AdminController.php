@@ -74,15 +74,19 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(UpdateAdminRequest $request, Admin $Admin)
-    // {
-    //     $data = $request->validated();
+    public function update(Request $request, Admin $admin)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Admin::class],
+            'password' => ['required', Rules\Password::defaults()],
+        ]);
 
 
 
-    //     $Admin->update($data);
-    //     return to_route('admin.admins.index')->with('success', __('keywords.Admin_updated_successfully'));
-    // }
+        $admin->update($data);
+        return to_route('back.admins.index')->with('success', __('keywords.admin_updated_successfully'));
+    }
 
     /**
      * Remove the specified resource from storage.
