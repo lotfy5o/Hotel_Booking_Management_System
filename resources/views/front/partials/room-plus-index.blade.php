@@ -6,7 +6,7 @@
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex">
                     <a href="#" class="img"
-                        style="background-image: url({{asset('assets-front')}}/images/room-1.jpg);"></a>
+                        style="background-image: url({{asset('storage')}}/rooms/{{ $room->image}}"></a>
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 p-xl-5 text-center">
 

@@ -15,7 +15,6 @@
             <th>{{ __('keywords.price') }}</th>
             <th>{{ __('keywords.room_name') }}</th>
             <th>{{ __('keywords.hotel_name') }}</th>
-            <th>{{ __('keywords.status') }}</th>
             {{-- <th>{{ __('keywords.actions') }}</th> --}}
         </tr>
     </thead>
@@ -32,7 +31,6 @@
             <td>{{ $booking->price }}</td>
             <td>{{ $booking->room->name }}</td>
             <td>{{ $booking->hotel->name }}</td>
-            <td>{{ $booking->status }}</td>
             {{-- <td>
                 <a href="{{ route('admin.bookings.show', ['booking' => $booking]) }}" class="btn mb-2 btn-success">{{
                     __('keywords.show_button') }}</a>

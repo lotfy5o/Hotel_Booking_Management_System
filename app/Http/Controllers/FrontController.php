@@ -43,6 +43,7 @@ class FrontController extends Controller
     }
     public function rooms()
     {
+        $rooms = Room::all();
         return view('front.rooms', get_defined_vars());
     }
 
