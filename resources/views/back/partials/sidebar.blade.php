@@ -37,6 +37,11 @@
                 localization="{{ __('keywords.admins') }}">
             </x-sidebar-tab>
 
+            {{-- Users --}}
+            <x-sidebar-tab href="{{ route('back.users.index') }}" icon="fe-users"
+                localization="{{ __('keywords.users') }}">
+            </x-sidebar-tab>
+
             {{-- Hotels --}}
             <x-sidebar-tab href="{{ route('back.hotels.index') }}" icon="fe-database"
                 localization="{{ __('keywords.hotels') }}">
@@ -50,6 +55,11 @@
             {{-- Bookings --}}
             <x-sidebar-tab href="{{ route('back.bookings.index') }}" icon="fe-book"
                 localization="{{ __('keywords.bookings') }}">
+            </x-sidebar-tab>
+
+            {{-- Roles --}}
+            <x-sidebar-tab href="{{ route('back.roles.index') }}" icon="fe-layers"
+                localization="{{ __('keywords.roles') }}">
             </x-sidebar-tab>
         </ul>
 

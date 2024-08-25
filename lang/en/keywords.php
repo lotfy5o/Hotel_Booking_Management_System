@@ -99,5 +99,25 @@ return [
     'admin_deleted_successfully' => 'Your Admin Was Deleted Successfully',
     'edit_admin' => 'Edit Admin',
 
+    // user tab
+    'users' => 'Users',
+    'user_created_successfully' => 'Your User Was Created Successfully',
+    'user_updated_successfully' => 'Your User Was Updated Successfully',
+    'user_deleted_successfully' => 'Your User Was Deleted Successfully',
+    'edit_user' => 'Edit User',
+
+
+    // role tab
+    'roles' => 'Roles',
+    'add_new_role' => 'Add New Role',
+    'show_role' => 'Show Role',
+    'selectAll' => 'Select All',
+    'please_enter' => 'Please Enter Your',
+    'select_role' => 'Select Role',
+    'role_created_successfully' => 'Your Role Was Created Successfully',
+
+
+
+
 
 ];

@@ -9,6 +9,8 @@ use App\Http\Controllers\HotelController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -70,6 +72,12 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
 
         /// Admins///
         Route::resource('admins', AdminController::class);
+
+        /// Users///
+        Route::resource('users', UserController::class)->except('edit', 'update');
+
+        /// Roles///
+        Route::resource('roles', RoleController::class);
 
         /// Hotels///
         Route::resource('hotels', HotelController::class);

@@ -22,6 +22,7 @@
                         <th>{{ __('keywords.id') }}</th>
                         <th>{{ __('keywords.name') }}</th>
                         <th>{{ __('keywords.email') }}</th>
+                        <th>{{ __('keywords.roles') }}</th>
                         <th>{{ __('keywords.actions') }}</th>
                     </tr>
                 </thead>
@@ -31,6 +32,13 @@
                         <td>{{ $admins->firstItem() + $loop->index }}</td>
                         <td>{{ $admin->name }}</td>
                         <td>{{ $admin->email }}</td>
+                        <td>
+                            @if (count($admin->getRoleNames()) > 0)
+                            <span class="badge mb-2 btn-info">
+                                {{ $admin->getRoleNames()[0] ?? '' }}
+                            </span>
+                            @endif
+                        </td>
 
                         <td>
                             <a href="{{ route('back.admins.show', ['admin' => $admin]) }}"

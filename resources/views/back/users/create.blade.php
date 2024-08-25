@@ -3,7 +3,7 @@
 @section('title', __('keywords.add_new'))
 
 @section('content')
-<form action="{{ route('back.admins.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('back.users.store') }}" method="post" enctype="multipart/form-data">
 
     @csrf
     <div class="row justify-content-center">
@@ -42,23 +42,6 @@
             </div>
         </div>
         <div class="w-100"></div> <!-- Break the row -->
-
-        <div class="col-md-4">
-            <div class="form-group mb-3">
-
-                <x-form-label title="roles"></x-form-label>
-
-                <select class="border form-control" name="role">
-                    <option value="" disabled selected>{{ __('keywords.select_role') }}...</option>
-                    @foreach ($roles as $role)
-                    <option value="{{ $role->name }}">{{ $role->name }}</option>
-                    @endforeach
-                </select>
-
-                <x-validation-error field="role"></x-validation-error>
-            </div>
-        </div>
-
 
 
 
