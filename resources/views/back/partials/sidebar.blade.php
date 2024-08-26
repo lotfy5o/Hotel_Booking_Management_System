@@ -62,6 +62,11 @@
                 localization="{{ __('keywords.roles') }}">
             </x-sidebar-tab>
 
+            {{-- Services --}}
+            <x-sidebar-tab href="{{ route('back.services.index') }}" icon="fe-grid"
+                localization="{{ __('keywords.services') }}">
+            </x-sidebar-tab>
+
             {{-- Amenities --}}
             <x-sidebar-tab href="{{ route('back.amenities.index') }}" icon="fe-coffee"
                 localization="{{ __('keywords.amenities') }}">

@@ -11,6 +11,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -88,6 +89,9 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
 
         /// Bookings ///
         Route::resource('bookings', BookingController::class);
+
+        /// Services ///
+        Route::resource('services', ServiceController::class);
 
         /// Amenities ///
         Route::resource('amenities', AmenityController::class);

@@ -123,6 +123,16 @@ return [
     'amenity_updated_successfully' => 'Your Amenity Was Updated Successfully',
     'amenity_deleted_successfully' => 'Your Amenity Was Deleted Successfully',
     'edit_amenity' => 'Edit Amenity',
+    'show_amenity' => 'Show Amenity',
+
+
+    // services
+    'services' => 'Services',
+    'service_created_successfully' => 'Your Service Was Created Successfully',
+    'service_updated_successfully' => 'Your Service Was Updated Successfully',
+    'service_deleted_successfully' => 'Your Service Was Deleted Successfully',
+    'edit_service' => 'Edit Service',
+    'show_service' => 'Show Service',
 
 
 
