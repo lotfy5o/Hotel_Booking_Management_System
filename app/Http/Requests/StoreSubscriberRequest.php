@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreContactRequest extends FormRequest
+class StoreSubscriberRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class StoreContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:contacts,email',
-            'subject' => 'required',
-            'message' => 'required',
+            'subscr_email' => 'required|email|unique:subscribers,subscr_email',
 
         ];
     }
@@ -33,10 +30,8 @@ class StoreContactRequest extends FormRequest
     public function attributes()
     {
         return [
-            'name' => __('keywords.name'),
-            'email' => __('keywords.email'),
-            'subject' => __('keywords.subject'),
-            'message' => __('keywords.message'),
+            'subscr_email' => __('keywords.email'),
+
         ];
     }
 }

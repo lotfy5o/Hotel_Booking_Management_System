@@ -44,6 +44,9 @@ Route::name('front.')->controller(FrontController::class)->group(function () {
     Route::post('contact/store', 'contactStore')->name('contact.store');
     Route::get('/contact', 'contact')->name('contact');
 
+    //=========================SUBSCIBER_Footer PAGE
+    Route::post('subscriber/store', 'subscriberStore')->name('subscriber.store');
+
     //=========================ROOMS PAGE
     Route::get('/rooms', 'rooms')->name('rooms');
 

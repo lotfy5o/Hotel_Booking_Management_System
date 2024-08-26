@@ -16,6 +16,7 @@ use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\FrontStoreBookingReq;
 use App\Http\Requests\StoreSubscriberRequest;
+use App\Models\Subscriber;
 
 class FrontController extends Controller
 {
@@ -52,6 +53,13 @@ class FrontController extends Controller
         $data = $request->validated();
         Contact::create($data);
         return to_route('front.contact')->with('success', 'Your Message Sent Successfully');
+    }
+    public function subscriberStore(StoreSubscriberRequest $request)
+    {
+        $data = $request->validated();
+        Subscriber::create($data);
+
+        return back()->with('success_subscriber', 'You Subscribed Successfully');
     }
 
 

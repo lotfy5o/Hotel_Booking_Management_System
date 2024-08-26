@@ -30,12 +30,21 @@
             </div>
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                 <h2 class="footer-heading">Subcribe</h2>
-                <form action="#" class="subscribe-form">
+
+                @if (session('success_subscriber'))
+                <div class="alert alert-success">{{ session('success_subscriber') }}</div>
+                @endif
+
+                <form action="{{ route('front.subscriber.store') }}" class="subscribe-form" method="POST">
+                    @csrf
                     <div class="form-group d-flex">
-                        <input type="text" class="form-control rounded-left" placeholder="Enter email address">
+                        <input type="text" class="form-control rounded-left" placeholder="Enter email address"
+                            name="subscr_email" value="{{old('subscr_email')}}">
                         <button type="submit" class="form-control submit rounded-right"><span
                                 class="sr-only">Submit</span><i class="fa fa-paper-plane"></i></button>
                     </div>
+                    <x-validation-error field="subscr_email"></x-validation-error>
+
                 </form>
                 <h2 class="footer-heading mt-5">Follow us</h2>
                 <ul class="ftco-footer-social p-0">

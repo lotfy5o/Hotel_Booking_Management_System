@@ -28,18 +28,23 @@
                     <div class="row no-gutters">
                         <div class="col-lg-12 col-md-2 d-flex align-items-stretch">
                             <div class="contact-wrap w-100 p-md-5 p-4">
+                                <x-success-alert></x-success-alert>
                                 <h3 class="mb-4">Get in touch</h3>
                                 <div id="form-message-warning" class="mb-4"></div>
                                 <div id="form-message-success" class="mb-4">
                                     Your message was sent, thank you!
                                 </div>
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <form action="{{ route('front.contact.store') }}" method="POST" id="contactForm"
+                                    name="contactForm" class="contactForm">
+                                    @csrf
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="label" for="name">Full Name</label>
                                                 <input type="text" class="form-control" name="name" id="name"
                                                     placeholder="Name">
+                                                <x-validation-error field="name"></x-validation-error>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -47,6 +52,9 @@
                                                 <label class="label" for="email">Email Address</label>
                                                 <input type="email" class="form-control" name="email" id="email"
                                                     placeholder="Email">
+
+                                                <x-validation-error field="email"></x-validation-error>
+
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -54,6 +62,8 @@
                                                 <label class="label" for="subject">Subject</label>
                                                 <input type="text" class="form-control" name="subject" id="subject"
                                                     placeholder="Subject">
+                                                <x-validation-error field="subject"></x-validation-error>
+
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -61,12 +71,15 @@
                                                 <label class="label" for="#">Message</label>
                                                 <textarea name="message" class="form-control" id="message" cols="30"
                                                     rows="4" placeholder="Message"></textarea>
+                                                <x-validation-error field="message"></x-validation-error>
+
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="submit" value="Send Message" class="btn btn-primary">
-                                                <div class="submitting"></div>
+                                                {{-- <input type="submit" value="Send Message" class="btn btn-primary">
+                                                <div class="submitting"></div> --}}
+                                                <button type="submit" class="btn btn-primary">Send Message</button>
                                             </div>
                                         </div>
                                     </div>

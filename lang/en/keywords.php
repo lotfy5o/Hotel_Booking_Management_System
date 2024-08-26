@@ -38,6 +38,8 @@ return [
     'description' => 'Description',
     'actions' => 'Actions',
     'id' => 'ID',
+    'message' => 'Message',
+    'subject' => 'Subject',
 
 
     'hotel_created_successfully' => 'Your Hotel Was Created Successfully',
