@@ -145,9 +145,17 @@ return [
     'website' => 'Website',
     'facebook' => 'Facebook',
     'instagram' => 'Instagram',
-    'dribbble' => 'Dribbble'
+    'dribbble' => 'Dribbble',
 
+    // testimonials
 
+    'testimonials' => 'Testimonials',
+    'edit_testimonial' => 'Edit Testimonial',
+    'show_testimonial' => 'Show Testimonial',
+    'position' => 'Position',
+    'testimonial_created_successfully' => 'Your Testimonial Was Created Successfully',
+    'testimonial_updated_successfully' => 'Your Testimonial Was Updated Successfully',
+    'testimonial_deleted_successfully' => 'Your Testimonial Was Deleted Successfully',
 
 
 

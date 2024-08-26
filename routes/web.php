@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -96,6 +97,9 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
 
         /// Amenities ///
         Route::resource('amenities', AmenityController::class);
+
+        /// testimonials ///
+        Route::resource('testimonials', TestimonialController::class);
 
         /// Settings ///
         Route::resource('settings', SettingController::class)->only('index', 'update');
