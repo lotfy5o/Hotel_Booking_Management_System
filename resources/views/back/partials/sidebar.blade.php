@@ -71,6 +71,11 @@
             <x-sidebar-tab href="{{ route('back.amenities.index') }}" icon="fe-coffee"
                 localization="{{ __('keywords.amenities') }}">
             </x-sidebar-tab>
+
+            {{-- Settings --}}
+            <x-sidebar-tab href="{{ route('back.settings.index') }}" icon="fe-settings"
+                localization="{{ __('keywords.settings') }}">
+            </x-sidebar-tab>
         </ul>
 
         </div>

@@ -134,6 +134,19 @@ return [
     'edit_service' => 'Edit Service',
     'show_service' => 'Show Service',
 
+    //settings
+    'edit_settings' => 'Edit Settings',
+
+    'settings' => 'Settings',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'dribbble' => 'Dribbble',
+    'twitter' => 'Twitter',
+    'website' => 'Website',
+    'facebook' => 'Facebook',
+    'instagram' => 'Instagram',
+    'dribbble' => 'Dribbble'
+
 
 
 
