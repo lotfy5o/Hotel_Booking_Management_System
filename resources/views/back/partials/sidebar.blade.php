@@ -61,6 +61,11 @@
             <x-sidebar-tab href="{{ route('back.roles.index') }}" icon="fe-layers"
                 localization="{{ __('keywords.roles') }}">
             </x-sidebar-tab>
+
+            {{-- Amenities --}}
+            <x-sidebar-tab href="{{ route('back.amenities.index') }}" icon="fe-coffee"
+                localization="{{ __('keywords.amenities') }}">
+            </x-sidebar-tab>
         </ul>
 
         </div>

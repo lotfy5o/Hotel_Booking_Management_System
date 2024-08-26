@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AmenityController;
 use App\Http\Controllers\BackHomeController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HotelController;
@@ -87,6 +88,9 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
 
         /// Bookings ///
         Route::resource('bookings', BookingController::class);
+
+        /// Amenities ///
+        Route::resource('amenities', AmenityController::class);
     });
 
     require __DIR__ . '/adminAuth.php';

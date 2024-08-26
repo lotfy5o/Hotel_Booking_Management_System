@@ -79,6 +79,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-8 col-xl-3 mb-6 mt-3 ">
+                    <div class="border-0 ">
+
+                        <div class="mb-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+
+                <div class="align-self-center">
+
+                    <div class="col-6 text-center">
+                        <span class="circle circle-sm bg-primary">
+                            <i class="fe fe-16 fe-home text-white mb-0"></i>
+                        </span>
+                        <a href="{{ route('front.index') }}" target="_blank">Front Website</a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>

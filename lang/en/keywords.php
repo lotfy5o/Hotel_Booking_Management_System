@@ -116,6 +116,14 @@ return [
     'select_role' => 'Select Role',
     'role_created_successfully' => 'Your Role Was Created Successfully',
 
+    // amenities
+    'icon' => 'Icon',
+    'amenities' => 'Amenities',
+    'amenity_created_successfully' => 'Your Amenity Was Created Successfully',
+    'amenity_updated_successfully' => 'Your Amenity Was Updated Successfully',
+    'amenity_deleted_successfully' => 'Your Amenity Was Deleted Successfully',
+    'edit_amenity' => 'Edit Amenity',
+
 
 
 
