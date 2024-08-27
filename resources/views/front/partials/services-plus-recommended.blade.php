@@ -15,7 +15,7 @@
             </div>
 
             {{-- Services --}}
-            @include('front.partials.half-service')
+            @include('front.partials.amenities')
         </div>
     </div>
 </section>

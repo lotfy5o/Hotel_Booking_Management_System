@@ -9,10 +9,13 @@
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                 <h2 class="footer-heading">Services</h2>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="py-1 d-block">Map Direction</a></li>
-                    <li><a href="#" class="py-1 d-block">Accomodation Services</a></li>
-                    <li><a href="#" class="py-1 d-block">Great Experience</a></li>
-                    <li><a href="#" class="py-1 d-block">Perfect central location</a></li>
+                    @forelse ($services as $service )
+                    <li><a href="#" class="py-1 d-block">{{ $service->name }}</a></li>
+
+                    @empty
+
+                    @endforelse
+
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
@@ -48,17 +51,27 @@
                 </form>
                 <h2 class="footer-heading mt-5">Follow us</h2>
                 <ul class="ftco-footer-social p-0">
-                    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top"
-                            title="Twitter"><span class="fa fa-twitter"></span></a></li>
-                    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top"
-                            title="Facebook"><span class="fa fa-facebook"></span></a></li>
-                    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top"
-                            title="Instagram"><span class="fa fa-instagram"></span></a></li>
+
+                    @if($settings->twitter)
+                    <li class="ftco-animate"><a href="{{ url($settings->twitter) }}" data-toggle="tooltip"
+                            data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                    @endif
+
+                    @if($settings->facebook)
+                    <li class="ftco-animate"><a href="{{ url($settings->facebook) }}" data-toggle="tooltip"
+                            data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                    @endif
+
+                    @if($settings->instagram)
+                    <li class="ftco-animate"><a href="{{ url($settings->instagram) }}" data-toggle="tooltip"
+                            data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                    @endif
+
                 </ul>
             </div>
         </div>
     </div>
-    <div class="w-100 mt-5 border-top py-5">
+    {{-- <div class="w-100 mt-5 border-top py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-8">
@@ -81,5 +94,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </footer>

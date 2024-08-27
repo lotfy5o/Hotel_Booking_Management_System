@@ -20,7 +20,7 @@
                     Semantics, a
                     large
                     language ocean.</p>
-                <p><a href="#" class="btn btn-primary">Book Apartment Now</a></p>
+                <p><a href="{{ route('front.rooms') }}" class="btn btn-primary">Book Apartment Now</a></p>
             </div>
 
             <div class="col-lg-8">
@@ -100,7 +100,7 @@
                             <span class="fa fa-map-marker"></span>
                         </div>
                         <div class="text pl-3">
-                            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                            <p><span>Address:</span> {{ $settings->address }}</p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex align-items-center">
@@ -108,7 +108,7 @@
                             <span class="fa fa-phone"></span>
                         </div>
                         <div class="text pl-3">
-                            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                            <p><span>Phone:</span> <a href="tel://1234567920">{{ $settings->phone }}</a></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex align-items-center">
@@ -116,7 +116,7 @@
                             <span class="fa fa-paper-plane"></span>
                         </div>
                         <div class="text pl-3">
-                            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+                            <p><span>Email:</span> <a href="mailto:{{ $settings->email }}">{{ $settings->email }}</a>
                             </p>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                             <span class="fa fa-globe"></span>
                         </div>
                         <div class="text pl-3">
-                            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                            <p><span>Website</span> <a href="#">{{ $settings->website }}</a></p>
                         </div>
                     </div>
                 </div>

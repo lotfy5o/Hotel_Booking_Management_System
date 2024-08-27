@@ -16,7 +16,10 @@ use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\FrontStoreBookingReq;
 use App\Http\Requests\StoreSubscriberRequest;
+use App\Models\Amenity;
+use App\Models\Service;
 use App\Models\Subscriber;
+use App\Models\Testimonial;
 
 class FrontController extends Controller
 {
@@ -30,11 +33,13 @@ class FrontController extends Controller
 
     public function about()
     {
+        $testimonials = Testimonial::all();
         return view('front.about', get_defined_vars());
     }
 
     public function service()
     {
+        // amenities and services came from the SettingsProvider I made.
         return view('front.service', get_defined_vars());
     }
 

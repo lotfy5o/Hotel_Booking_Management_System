@@ -64,8 +64,10 @@
                 <h2>Ready to get started</h2>
                 <p class="mb-4">It’s safe to book online with us! Get your dream stay in clicks or drop us a line
                     with your questions.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Learn More</a> <a href="#"
-                        class="btn btn-white px-4 py-3">Contact us</a></p>
+                <p class="mb-0">
+                    <a href="{{ route('front.about') }}" class="btn btn-primary px-4 py-3">Learn More</a>
+                    <a href="{{ route('front.contact') }}" class="btn btn-white px-4 py-3">Contact us</a>
+                </p>
             </div>
         </div>
     </div>
