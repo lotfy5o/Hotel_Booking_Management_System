@@ -77,6 +77,11 @@
                 localization="{{ __('keywords.testimonials') }}">
             </x-sidebar-tab>
 
+            {{-- Subscribers --}}
+            <x-sidebar-tab href="{{ route('back.subscribers.index') }}" icon="fe-send"
+                localization="{{ __('keywords.subscribers') }}">
+            </x-sidebar-tab>
+
             {{-- Settings --}}
             <x-sidebar-tab href="{{ route('back.settings.index') }}" icon="fe-settings"
                 localization="{{ __('keywords.settings') }}">

@@ -159,6 +159,10 @@ return [
     'testimonial_updated_successfully' => 'Your Testimonial Was Updated Successfully',
     'testimonial_deleted_successfully' => 'Your Testimonial Was Deleted Successfully',
 
+    // subscribers
+    'subscribers' => 'Subscribers',
+    'subscriber_deleted_successfully' => 'Your Subscriber Was Deleted Successfully',
+
 
 
 ];
