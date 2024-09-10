@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\HotelController;
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\RoomController;
 use App\Http\Controllers\Api\SettingController;
 use Illuminate\Http\Request;
@@ -24,3 +25,6 @@ Route::get('/hotels', HotelController::class);
 
 ##---------------------------ROOMS MODULE---------------------##
 Route::get('/rooms/{hotel_id}', RoomController::class);
+
+##---------------------------MESSAGE  MODULE---------------------##
+Route::post('/message', MessageController::class);

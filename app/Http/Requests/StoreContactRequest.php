@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use ApiResponse;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Validation\ValidationException;
 
 class StoreContactRequest extends FormRequest
 {
@@ -38,5 +41,14 @@ class StoreContactRequest extends FormRequest
             'subject' => __('keywords.subject'),
             'message' => __('keywords.message'),
         ];
+    }
+
+    // Override the default vaidation error
+    protected function failedValidation(Validator $validator)
+    {
+        if ($this->is('api/*')) {
+            $response = ApiResponse::sendResponse(422, 'Validation Errors', $validator->messages()->all());
+            throw new ValidationException($validator, $response);
+        }
     }
 }
