@@ -163,6 +163,10 @@ return [
     'subscribers' => 'Subscribers',
     'subscriber_deleted_successfully' => 'Your Subscriber Was Deleted Successfully',
 
+    // messages
+    'messages' => 'Messages',
+    'message_deleted_successfully' => 'Your Message Was Deleted Successfully',
+
 
 
 ];

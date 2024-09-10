@@ -77,6 +77,11 @@
                 localization="{{ __('keywords.testimonials') }}">
             </x-sidebar-tab>
 
+            {{-- Contact Us --}}
+            <x-sidebar-tab href="{{ route('back.messages.index') }}" icon="fe-message-circle"
+                localization="{{ __('keywords.messages') }}">
+            </x-sidebar-tab>
+
             {{-- Subscribers --}}
             <x-sidebar-tab href="{{ route('back.subscribers.index') }}" icon="fe-send"
                 localization="{{ __('keywords.subscribers') }}">
