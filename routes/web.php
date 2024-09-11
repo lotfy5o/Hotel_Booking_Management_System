@@ -107,10 +107,10 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
         Route::resource('testimonials', TestimonialController::class);
 
         /// subscribers ///
-        Route::resource('subscribers', SubscriberController::class);
+        Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy']);
 
         /// Contact Us ///
-        Route::resource('messages', ContactController::class);
+        Route::resource('messages', ContactController::class)->only(['index', 'show', 'destroy']);
 
         /// Settings ///
         Route::resource('settings', SettingController::class)->only('index', 'update');
