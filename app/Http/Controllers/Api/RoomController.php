@@ -13,7 +13,7 @@ class RoomController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, $hotel_id)
+    public function index(Request $request, $hotel_id)
     {
         $rooms = Room::where('hotel_id', $hotel_id)->get();
 
@@ -22,5 +22,17 @@ class RoomController extends Controller
         }
 
         return ApiResponse::sendResponse(200, 'No Rooms for this Hotel', []);
+    }
+
+    public function roomDetails($room_id)
+    {
+
+        $room = Room::where('id', $room_id)->get();
+
+        if (count($room) > 0) {
+            return ApiResponse::sendResponse(200, 'Your Room Retrived Successfully', RoomResrouce::collection($room));
+        }
+
+        return ApiResponse::sendResponse(200, 'No Room Found', []);
     }
 }

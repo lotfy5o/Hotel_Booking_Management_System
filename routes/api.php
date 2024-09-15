@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AmenityController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BookingController;
 use App\Http\Controllers\Api\HotelController;
 use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\RoomController;
@@ -29,7 +30,11 @@ Route::get('/settings', SettingController::class);
 Route::get('/hotels', HotelController::class);
 
 ##---------------------------ROOMS MODULE---------------------##
-Route::get('/rooms/{hotel_id}', RoomController::class);
+Route::controller(RoomController::class)->group(function () {
+
+    Route::get('/rooms/{hotel_id}', 'index');
+    Route::get('/room/{room_id}', 'roomDetails')->middleware('auth:sanctum');
+});
 
 ##---------------------------MESSAGE  MODULE---------------------##
 Route::post('/message', MessageController::class);
@@ -46,9 +51,19 @@ Route::get('/amenity', AmenityController::class);
 ##---------------------------SERVICE  MODULE---------------------##
 Route::get('/service', ServiceController::class);
 
-##---------------------------SERVICE  MODULE---------------------##
+##---------------------------AUTH  MODULE---------------------##
 Route::controller(AuthController::class)->group(function () {
     Route::post('/register', 'register');
     Route::post('/login', 'login');
     Route::post('/logout', 'destroy')->middleware('auth:sanctum');
+});
+
+##---------------------------BOOKING  MODULE---------------------##
+Route::prefix('bookings')->controller(BookingController::class)->group(function () {
+
+    Route::get('/', 'index')->middleware('auth:sanctum');
+
+    Route::post('/create/{room_id}', 'create')->middleware('auth:sanctum');
+
+    Route::post('/delete/{booking_id}', 'delete')->middleware('auth:sanctum');
 });
