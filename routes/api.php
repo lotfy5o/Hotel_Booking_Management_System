@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AmenityController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\HotelController;
 use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\RoomController;
@@ -44,3 +45,10 @@ Route::get('/amenity', AmenityController::class);
 
 ##---------------------------SERVICE  MODULE---------------------##
 Route::get('/service', ServiceController::class);
+
+##---------------------------SERVICE  MODULE---------------------##
+Route::controller(AuthController::class)->group(function () {
+    Route::post('/register', 'register');
+    Route::post('/login', 'login');
+    Route::post('/logout', 'destroy')->middleware('auth:sanctum');
+});
