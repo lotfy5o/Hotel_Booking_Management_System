@@ -3,11 +3,12 @@
 namespace App\Http\Requests;
 
 use ApiResponse;
+use Illuminate\Validation\Rules;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\ValidationException;
 
-class StoreContactRequest extends FormRequest
+class StoreUserReq extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +28,8 @@ class StoreContactRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|email',
-            'subject' => 'required|string',
-            'message' => 'required|string',
+            'password' => ['required', Rules\Password::defaults()],
+
 
         ];
     }
@@ -38,16 +39,16 @@ class StoreContactRequest extends FormRequest
         return [
             'name' => __('keywords.name'),
             'email' => __('keywords.email'),
-            'subject' => __('keywords.subject'),
-            'message' => __('keywords.message'),
+            'password' => __('keywords.password'),
+
         ];
     }
 
-    // Override the default vaidation error
     protected function failedValidation(Validator $validator)
     {
         if ($this->is('api/*')) {
-            $response = ApiResponse::sendResponse(422, 'Validation Errors', $validator->errors());
+            $response = ApiResponse::sendResponse(422, 'Validation Error', $validator->messages()->all());
+
             throw new ValidationException($validator, $response);
         }
     }

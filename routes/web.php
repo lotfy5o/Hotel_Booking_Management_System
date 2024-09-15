@@ -8,6 +8,7 @@ use App\Http\Controllers\BackHomeController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -106,7 +107,10 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
         Route::resource('testimonials', TestimonialController::class);
 
         /// subscribers ///
-        Route::resource('subscribers', SubscriberController::class);
+        Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy']);
+
+        /// Contact Us ///
+        Route::resource('messages', ContactController::class)->only(['index', 'show', 'destroy']);
 
         /// Settings ///
         Route::resource('settings', SettingController::class)->only('index', 'update');

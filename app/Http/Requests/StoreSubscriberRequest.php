@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+use ApiResponse;
+use App\Models\Subscriber;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Validation\ValidationException;
 
 class StoreSubscriberRequest extends FormRequest
 {
@@ -33,5 +37,16 @@ class StoreSubscriberRequest extends FormRequest
             'subscr_email' => __('keywords.email'),
 
         ];
+    }
+
+
+
+    protected function failedValidation(Validator $validator)
+    {
+        if ($this->is('api/*')) {
+            $response = ApiResponse::sendResponse(422, 'Validation Error', $validator->messages()->all());
+
+            throw new ValidationException($validator, $response);
+        }
     }
 }
