@@ -7,6 +7,7 @@ use App\Models\Service;
 use App\Models\Setting;
 // use Illuminate\View\View;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class SettingsProvider extends ServiceProvider
@@ -24,11 +25,20 @@ class SettingsProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $settings = Setting::findOrFail(1);
-        $amenities = Amenity::all();
-        $services = Service::all();
-        View::share('settings', $settings);
-        View::share('amenities', $amenities);
-        View::share('services', $services);
+        if (Schema::hasTable('settings')) {
+
+            $settings = Setting::findOrFail(1);
+            View::share('settings', $settings);
+        }
+        if (Schema::hasTable('amenities')) {
+
+            $amenities = Amenity::all();
+            View::share('amenities', $amenities);
+        }
+        if (Schema::hasTable('services')) {
+
+            $services = Service::all();
+            View::share('services', $services);
+        }
     }
 }
