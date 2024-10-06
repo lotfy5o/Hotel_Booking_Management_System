@@ -21,10 +21,18 @@
                             </div>
                         </div>
 
+
                         <div class="col-md-12">
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" name="password">
                                 <x-input-error :messages=" $errors->get('password')" class="mt-2" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="remember-me" name="remember" />
+                                <label class="form-check-label" for="remember-me"> Remember Me </label>
                             </div>
                         </div>
 
