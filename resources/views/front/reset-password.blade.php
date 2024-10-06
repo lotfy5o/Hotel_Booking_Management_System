@@ -9,24 +9,23 @@
 <section class="ftco-section ftco-book ftco-no-pt ftco-no-pb">
     <div class="container">
         <div class="row justify-content-middle" style="margin-left: 397px;">
+
+
             <div class="col-md-6 mt-5">
-                <form action="{{ route('login') }}" class="appointment-form" style="margin-top: -568px;" method="post">
+                <form action="{{ route('password.store') }}" class="appointment-form" style="margin-top: -568px;"
+                    method="post">
                     @csrf
-                    <h3 class="mb-3">Login</h3>
+                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+
+                    <h3 class="mb-3">Reset Password</h3>
+                    <div class="mb-2">Enter Your New Password</div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email" name="email">
+                                <input type="text" class="form-control" placeholder="Email" name="email"
+                                    value="{{ $request->email }}">
                                 <x-input-error :messages=" $errors->get('email')" class="mt-2" />
                             </div>
-                        </div>
-
-
-                        <div class="d-flex justify-content-between">
-                            <label class="form-label" for="password">Password</label>
-                            <a href="{{ route('password.request') }}">
-                                <small>Forgot Password?</small>
-                            </a>
                         </div>
 
                         <div class="col-md-12">
@@ -37,17 +36,17 @@
                         </div>
 
                         <div class="col-md-12">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="remember-me" name="remember" />
-                                <label class="form-check-label" for="remember-me"> Remember Me </label>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password"
+                                    name="password_confirmation">
+                                <x-input-error :messages=" $errors->get('password_confirmation')" class="mt-2" />
                             </div>
                         </div>
 
 
-
                         <div class="col-md-12">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary py-3 px-4">Login</button>
+                                <button type="submit" class="btn btn-primary py-3 px-4">Reset Password</button>
                             </div>
                         </div>
                     </div>

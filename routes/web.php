@@ -58,6 +58,7 @@ Route::name('front.')->controller(FrontController::class)->group(function () {
 
     Route::get('/bookings', 'bookings')->name('bookings')->middleware('auth');
 });
+
 require __DIR__ . '/auth.php';
 
 Route::middleware('check.price')->group(function () {
