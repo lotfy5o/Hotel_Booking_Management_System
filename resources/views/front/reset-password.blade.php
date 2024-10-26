@@ -12,6 +12,8 @@
 
 
             <div class="col-md-6 mt-5">
+                {{-- Session Status --}}
+
                 <form action="{{ route('password.store') }}" class="appointment-form" style="margin-top: -568px;"
                     method="post">
                     @csrf
@@ -22,6 +24,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <x-auth-session-status class="mb-4" :status="session('status')" />
                                 <input type="text" class="form-control" placeholder="Email" name="email"
                                     value="{{ $request->email }}">
                                 <x-input-error :messages=" $errors->get('email')" class="mt-2" />

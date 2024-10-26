@@ -47,6 +47,6 @@ class RegisteredUserController extends Controller
 
         Auth::guard('web')->login($user);
 
-        return to_route('front.index');
+        return to_route('verification.notice')->with('success', 'Verification Link Sent');
     }
 }

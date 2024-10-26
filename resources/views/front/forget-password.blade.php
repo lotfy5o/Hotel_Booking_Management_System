@@ -19,10 +19,13 @@
                     <div class="mb-2">Enter Your Email and we will send you a reset link</div>
                     <div class="row">
                         <div class="col-md-12">
+
+                            {{-- Email Address --}}
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Email" name="email">
                                 <x-input-error :messages=" $errors->get('email')" class="mt-2" />
                             </div>
+
                         </div>
 
 
@@ -32,7 +35,10 @@
                             </div>
                         </div>
                     </div>
+
+                    {{-- Session Status --}}
                     <x-auth-session-status class="mb-4" :status="session('status')" />
+
                 </form>
             </div>
         </div>

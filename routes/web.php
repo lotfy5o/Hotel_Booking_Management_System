@@ -35,6 +35,7 @@ Route::name('front.')->controller(FrontController::class)->group(function () {
     //=========================HOME PAGE
     // Route::post('subscriber/store', 'subscriberStore')->name('subscriber.store');
     Route::get('/', 'index')->name('index');
+    // Route::get('/', 'index')->name('index')->middleware('verified');
 
     //=========================ABOUT PAGE
     Route::get('/about', 'about')->name('about');
@@ -66,6 +67,7 @@ Route::middleware('check.price')->group(function () {
     Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
     Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
 });
+
 
 
 
@@ -116,6 +118,5 @@ Route::name('back.')->prefix(LaravelLocalization::setLocale() . '/back')->middle
         /// Settings ///
         Route::resource('settings', SettingController::class)->only('index', 'update');
     });
-
     require __DIR__ . '/adminAuth.php';
 });
