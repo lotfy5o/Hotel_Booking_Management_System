@@ -17,6 +17,6 @@ class EmailVerificationPromptController extends Controller
     {
         return $request->user()->hasVerifiedEmail()
             ? to_route('front.index')
-            : view('auth.verify-email');
+            : view('front.verify-email');
     }
 }

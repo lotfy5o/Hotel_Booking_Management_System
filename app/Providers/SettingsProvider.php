@@ -27,7 +27,11 @@ class SettingsProvider extends ServiceProvider
     {
         if (Schema::hasTable('settings')) {
 
-            $settings = Setting::findOrFail(1);
+            $settings = Setting::firstOrCreate(['id' => 1], [
+                'website' => 'lotfy.com',
+                'address' => 'cairo egypt',
+                'phone' => '123456789'
+            ]);
             View::share('settings', $settings);
         }
         if (Schema::hasTable('amenities')) {
